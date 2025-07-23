@@ -4,47 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redirigiendo a WhatsApp</title>
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src='https://connect.facebook.net/en_US/fbevents.js';
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script');
-    fbq('init', '4353118301578366'); // Reemplaza con tu Pixel ID
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=4353118301578366&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
       background-color: #ffffff;
-      color: #25D366; /* Verde WhatsApp */
-      font-family: Arial, sans-serif;
+      color: #25d366;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .whatsapp-button {
+      background-color: #25d366;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .whatsapp-button i {
+      margin-right: 10px;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #25d366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  Redirigiendo a WhatsApp...
+  <div>
+    <h1>Redirigiendo a WhatsApp...</h1>
+    <p class="message">Si no eres redirigido, haz clic en el siguiente botón:</p>
+    
+    <!-- Botón de WhatsApp con Meta Pixel -->
+    <a class="whatsapp-button" 
+       href="https://wa.me/5491126211564?text=Quiero%20el%20bono%20del%2050%25" 
+       target="_blank" 
+       onclick="fbq('trackCustom', 'ClickWhatsApp');">
+      <i class="fab fa-whatsapp"></i> ¡QUIERO MI BONO!
+    </a>
+
+    <div class="footer">
+      🎁 Bono Activo - ¡Solicítalo ahora por WhatsApp!
+    </div>
+  </div>
 
   <script>
-    setTimeout(() => {
-      window.location.href = "https://wa.me/+5491126211564";
-    }, 2000);
+    // Redirige automáticamente después de 3 segundos
+    setTimeout(function() {
+      window.location.href = "https://wa.me/5491126211564?text=Quiero%20el%20bono%20del%2050%25";
+    }, 3000);
   </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq) return; n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+      }; if(!f._fbq) f._fbq=n; f._fbq.push=f._fbq;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src='https://connect.facebook.net/en_US/fbevents.js';
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script');
+    fbq('init', '1391229175499473'); // Reemplaza este ID con tu propio Pixel ID de Meta
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1391229175499473&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
 </body>
 </html>
